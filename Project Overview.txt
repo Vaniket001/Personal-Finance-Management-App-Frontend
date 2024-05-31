@@ -1,0 +1,177 @@
+Personal Finance Management App
+
+Description:
+The Personal Finance Management App is a web application designed to help users manage their personal finances. The application provides tools for tracking expenses and income, creating and managing budgets, setting financial goals, and visualizing financial data with charts and graphs.
+
+Features: 
+Expense and Income Tracking: Users can log their expenses and income, categorize them, and track their financial transactions over time.
+Budget Creation and Tracking: Users can create budgets for different categories and track their spending against these budgets.
+Financial Goal Setting and Progress Tracking: Users can set financial goals, such as saving for a specific purpose, and track their progress towards these goals.
+Data Visualization with Charts and Graphs: The application provides visualizations to help users understand their financial situation, including spending trends and budget adherence.
+
+Technology Stack:
+
+-Backend:
+Java
+Spring Boot
+REST API
+H2 Database
+Spring Data JPA
+
+-Frontend:
+React
+HTML
+CSS
+System Architecture
+
+API Documentation:
+
+Expense API:
+-------------------------------------------------------------------
+GET /api/expenses: Retrieve all expenses
+POST /api/expenses: Create a new expense record
+GET /api/expenses/{id}: Retrieve a specific expense record by ID
+PUT /api/expenses/{id}: Update a specific expense record by ID
+DELETE /api/expenses/{id}: Delete a specific expense record by ID
+
+Income API
+--------------------------------------------------------------------
+GET /api/incomes: Retrieve all income records
+POST /api/incomes: Create a new income record
+GET /api/incomes/{id}: Retrieve a specific income record by ID
+PUT /api/incomes/{id}: Update a specific income record by ID
+DELETE /api/incomes/{id}: Delete a specific income record by ID
+
+Budget API
+-------------------------------------------------------------------
+GET /api/budgets: Retrieve all budgets
+POST /api/budgets: Create a new budget
+GET /api/budgets/{id}: Retrieve a specific budget by ID
+PUT /api/budgets/{id}: Update a specific budget by ID
+DELETE /api/budgets/{id}: Delete a specific budget by ID
+
+Financial Goals API
+-------------------------------------------------------------------
+GET /api/goals: Retrieve all financial goals
+POST /api/goals: Create a new financial goal
+GET /api/goals/{id}: Retrieve a specific financial goal by ID
+PUT /api/goals/{id}: Update a specific financial goal by ID
+DELETE /api/goals/{id}: Delete a specific financial goal by ID
+
+Database Schema:
+
+Expense Table
+---------------------------------------------------------------------
+Column Name	Data Type	Description
+id	Long	Primary key
+user_id	Long	Foreign key referencing User
+category	String	Category of the expense
+amount	Double	Amount of the expense
+date	Date	Date of the expense
+description	String	Description of the expense
+
+Income Table
+--------------------------------------------------------------------
+Column Name	Data Type	Description
+id	Long	Primary key
+user_id	Long	Foreign key referencing User
+source	String	Source of the income
+amount	Double	Amount of the income
+date	Date	Date of the income
+description	String	Description of the income
+
+Budget Table
+-------------------------------------------------------------------
+Column Name	Data Type	Description
+id	Long	Primary key
+user_id	Long	Foreign key referencing User
+category	String	Budget category
+amount	Double	Budget amount
+start_date	Date	Start date of the budget period
+end_date	Date	End date of the budget period
+
+Financial Goals Table
+--------------------------------------------------------------------
+Column Name	Data Type	Description
+id	Long	Primary key
+user_id	Long	Foreign key referencing User
+goal_name	String	Name of the financial goal
+target_amount	Double	Target amount for the goal
+current_amount	Double	Current amount saved towards the goal
+target_date	Date	Target date for achieving the goal
+description	String	Description of the financial goal
+
+
+Frontend Structure:
+
+Components:
+----------------------------------------------------------------------------------------
+ExpenseLog: Component for logging and displaying expenses
+IncomeLog: Component for logging and displaying income
+Budget: Component for creating and tracking budgets
+FinancialGoals: Component for setting and tracking financial goals
+Dashboard: Main dashboard component displaying an overview of all financial activities
+
+Pages:
+----------------------------------------------------------------------------------------
+HomePage: Landing page with an overview and navigation links
+LoginPage: User authentication page
+RegisterPage: User registration page
+DashboardPage: User-specific dashboard with summaries and links to detailed logs
+
+User Interface:
+-----------------------------------------------------------------------------------------
+Dashboard Page
+Expense Summary: Display recent expenses and spending trends
+Income Summary: Display recent income and sources
+Budget Summary: Display current budget status and adherence
+Financial Goals Overview: List of current financial goals and progress
+
+Expense Log Page:
+Log Expense: Form to log a new expense
+Expense History: List and search past expenses
+
+Income Log Page:
+Log Income: Form to log a new income
+Income History: List and search past income entries
+
+Budget Page:
+Create Budget: Form to create a new budget
+Budget History: List and search past and current budgets
+
+Financial Goals Page:
+Set Financial Goal: Form to set a new financial goal
+Goal Progress: List and track progress of all financial goals
+
+Development Setup:
+----------------------------------------------------------------------------------------
+Prerequisites
+JDK 11+
+Node.js and npm
+Maven
+IDE (IntelliJ IDEA, VSCode, etc.)
+
+Backend Setup:
+----------------------------------------------------------------------------------------
+Clone the repository: git clone <repository-url>
+Navigate to the backend directory: cd backend
+Run the application: mvn spring-boot:run
+
+Frontend Setup:
+---------------------------------------------------------------------------------------
+Navigate to the frontend directory: cd frontend
+Install dependencies: npm install
+Start the application: npm start
+
+Deployment:
+------------------------------------------------------------------------------------
+Backend:
+-Package the application: mvn package
+-Deploy the JAR file to your server: java -jar target/personal-finance-management.jar
+
+Frontend:
+-Build the application: npm run build
+-Serve the static files using a web server like Nginx or Apache
+
+
+
